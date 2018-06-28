@@ -49,3 +49,7 @@ Song: Home with You
 Album the song is from: As She Pleases
 Preview Url: https://p.scdn.co/mp3-preview/3dd4e833f706e3637eb3a6d46312c41c450a44f1?cid=23d194e7f4bd45d29fbad7978e186bb3
 ------------------------------ 4 ------------------------------
+=============== LOG ENTRY BEGIN ===============
+Thu Jun 28 2018 16:28:11 GMT-0600 (Mountain Daylight Time)[object Object]
+ =============== LOG ENTRY END ===============
+ 

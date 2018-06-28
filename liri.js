@@ -11,19 +11,19 @@ var fs = require("fs");
 
 // Default instructions to operate the program. 
 console.log("\r\n" +  "Welcome to LIRI. In order to use it, type in the following VALID commands following 'node liri.js' :"+"\r\n"+
-"twitter 'any valid twitter account name' "+"\r\n"+
-"spotify 'any music title'" + "\n\r" +
-"movie 'any movie title'" + "\n\r" +
-"doWhatever" + "\n\r"+
+"my-tweets 'any valid twitter account name' "+"\r\n"+
+"spotify-this-song 'any music title'" + "\n\r" +
+"movie-this 'any movie title'" + "\n\r" +
+"do-what-it-says" + "\n\r"+
 "If using more than one word, make sure it is placed with QUOTATION marks.");
 
-if (liriArgument === "twitter"){
+if (liriArgument === "my-tweets"){
     myTweets();
-} else if(liriArgument === "spotify"){
+} else if(liriArgument === "spotify-this-song"){
     spotifyThis();
-} else if(liriArgument === "movie"){
+} else if(liriArgument === "movie-this"){
     movieThis();
-} else if(liriArgument === "doWhatever"){
+} else if(liriArgument === "do-what-it-says"){
     doThis();
 };
 // FUNCTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -45,7 +45,7 @@ if (liriArgument === "twitter"){
                 console.log("Movie Actors: "+ JSON.parse(body).Actors);
                 console.log("Rotten Tomatoes Rating: "+ JSON.parse(body).Ratings[0]);
                 console.log("-----------------------------------------------------------------" + "\r\n")
-                fs.appendFile('log.txt', ('=============== LOG ENTRY BEGIN ===============\r\n' + Date() + '\r\n \r\nTERMINAL COMMANDS: ' + process.argv + '\r\nDATA OUTPUT:\r\n' + 'Title: ' + jsonBody.Title + '\r\nYear: ' + jsonBody.Year + '\r\nIMDb Rating: ' + jsonBody.imdbRating + '\r\nCountry: ' + jsonBody.Country + '\r\nLanguage: ' + jsonBody.Language + '\r\nPlot: ' + jsonBody.Plot + '\r\nActors: ' + jsonBody.Actors + '\r\nRotten Tomatoes Rating: ' + jsonBody.tomatoRating + '\r\nRotten Tomatoes URL: ' + jsonBody.tomatoURL + '\r\n =============== LOG ENTRY END ===============\r\n \r\n'), function(err) {
+                fs.appendFile('log.txt', ('=============== LOG ENTRY BEGIN ===============\r\n' + Date() + response + '\r\n =============== LOG ENTRY END ===============\r\n \r\n'), function(err) {
                     if (err) throw err;
                 });
 				// log(movieResults); // calling log function
